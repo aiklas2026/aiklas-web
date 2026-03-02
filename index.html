@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>解鎖 AI KLAS 內容自動化變現 SOP</title>
+    <title>AI KLAS | 1 人公司內容自動化變現 SOP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
             --primary-green: #00ea81;
             --deep-blue: #373e98;
             --soft-pink: #ffb6f1;
-            --off-white: #e5ddd1;
         }
         body {
             font-family: 'Noto Sans TC', sans-serif;
@@ -22,9 +21,23 @@
             color: white;
             -webkit-font-smoothing: antialiased;
         }
-        .font-heading {
-            font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+        .brand-font {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #00ea81 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.45em;
         }
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.6rem;
+        }
+        .title-line { font-weight: 900; line-height: 1; }
         .btn-green {
             background-color: var(--primary-green);
             color: var(--deep-blue);
@@ -39,40 +52,20 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .step-number {
-            background: var(--soft-pink);
-            color: var(--deep-blue);
-        }
+        .light-gray { color: #a0a0a0; }
+        .hidden-node { display: none; }
         
-        .title-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.8rem; 
+        /* 動態提示動畫 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        .title-line {
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            line-height: 1;
-        }
-
-        .brand-text {
-            letter-spacing: 0.05em;
-            background: linear-gradient(to right, #00ea81, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1.4em; 
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .light-gray-text {
-            color: #b0b0b0; 
-        }
+        .animate-fade { animation: fadeIn 0.5s ease forwards; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center p-6 md:p-12 text-center">
 
+    <!-- 背景裝飾 -->
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#00ea81] opacity-[0.08] blur-[150px] rounded-full"></div>
         <div class="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#ffb6f1] opacity-[0.08] blur-[150px] rounded-full"></div>
@@ -81,91 +74,114 @@
     <main class="w-full max-w-3xl">
         
         <!-- 標題區域 -->
-        <div class="mb-20 pt-10 flex flex-col items-center">
+        <div class="mb-20 pt-10">
             <div class="title-container">
                 <div class="title-line">
-                    <span class="brand-text block uppercase">AI KLAS</span>
+                    <span class="brand-font block">AI KLAS</span>
                 </div>
                 <div class="title-line text-5xl md:text-7xl text-white">內容自動化</div>
                 <div class="title-line text-5xl md:text-7xl text-[#00ea81]">變現 SOP</div>
             </div>
-            
-            <div class="mt-16 flex justify-center">
-                <div class="h-1 w-24 bg-gradient-to-r from-[#00ea81] to-transparent rounded-full opacity-40"></div>
-            </div>
-            <p class="text-xl md:text-2xl text-gray-400 mt-12 font-light tracking-[0.1em]">
-                1 人公司的自動化獲客與變現指南
+            <p class="text-xl md:text-2xl text-gray-400 mt-12 font-light tracking-[0.15em]">
+                AI 自動化獲客與變現指南
             </p>
         </div>
 
-        <!-- 更新後的前言卡片 -->
-        <div class="glass-card rounded-[2.5rem] p-12 mb-14 border border-white/10 shadow-2xl">
-            <h3 class="text-xl font-bold mb-6 text-[#00ea81] tracking-[0.2em] uppercase opacity-90">為什麼你的 AI 沒辦法幫你賺錢？</h3>
-            <p class="text-gray-300 leading-loose text-lg md:text-xl font-light">
-                因為多數人只把 AI 當成聊天工具。這份 SOP 將分享我如何將 16 年的商業實戰經驗，轉化為一套「AI 自動化獲客系統」，讓你一個人也能發揮一個團隊的產能。
-                <span class="block mt-4 text-white font-medium">追蹤我們的 IG 並領取這份完整指南。</span>
-            </p>
-        </div>
-
-        <!-- 互動步驟 -->
-        <div class="space-y-10 max-w-xl mx-auto">
-            <div class="group text-left">
-                <div class="flex items-center justify-center gap-4 mb-4">
-                    <span class="step-number w-10 h-10 rounded-full flex items-center justify-center font-black shadow-lg">1</span>
-                    <span class="font-bold text-xl tracking-tight">追蹤我們的 Instagram</span>
+        <!-- 狀態 1: 尚未解鎖 (強制追蹤區) -->
+        <div id="locked-section" class="glass-card rounded-[2.5rem] p-8 md:p-12 mb-14 border border-white/10 shadow-2xl animate-fade">
+            <div class="flex justify-center mb-6">
+                <div class="p-4 bg-white/5 rounded-full">
+                    <i data-lucide="lock" class="w-10 h-10 text-[#ffb6f1]"></i>
                 </div>
-                <a href="https://www.instagram.com/ai.aiklas" target="_blank" onclick="unlockStep()" class="btn-green w-full py-6 rounded-3xl font-black text-2xl flex items-center justify-center gap-4 shadow-xl">
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">內容已被鎖定</h3>
+            <p class="text-gray-400 mb-8 leading-relaxed">
+                為了領取完整 SOP，請先追蹤 AI KLAS Instagram。<br>
+                <span class="text-[#00ea81] font-bold">追蹤後請重新回到此頁面即可下載。</span>
+            </p>
+            
+            <div class="space-y-4">
+                <a href="https://www.instagram.com/ai.aiklas" target="_blank" onclick="markAsClicked()" class="btn-green w-full py-6 rounded-3xl font-black text-2xl flex items-center justify-center gap-4 shadow-xl">
                     <i data-lucide="instagram" class="w-8 h-8"></i> 立即追蹤 @AI_KLAS
                 </a>
-            </div>
-
-            <div class="relative text-left">
-                <div class="flex items-center justify-center gap-4 mb-4">
-                    <span class="step-number w-10 h-10 rounded-full flex items-center justify-center font-black opacity-30" id="step-2-num">2</span>
-                    <span class="font-bold text-xl light-gray-text tracking-tight" id="step-2-text">下載變現 SOP 指南</span>
-                </div>
-                <a href="ai_klas_sop.pdf" id="download-btn" download="AI_KLAS_SOP.pdf" class="btn-green w-full py-6 rounded-3xl font-black text-2xl flex items-center justify-center gap-4 opacity-20 cursor-not-allowed pointer-events-none grayscale shadow-none">
-                    <i data-lucide="download" class="w-8 h-8"></i> 下載 PDF 檔案
-                </a>
-                <p id="unlock-msg" class="text-sm light-gray-text mt-4 tracking-widest uppercase text-center">完成步驟 1 後按鈕將自動解鎖</p>
+                
+                <button onclick="checkFollowStatus()" class="w-full py-4 text-white/50 hover:text-white transition-colors text-sm tracking-widest font-bold">
+                    我已經追蹤了，解鎖內容 <i data-lucide="chevron-right" class="inline w-4 h-4"></i>
+                </button>
             </div>
         </div>
 
-        <footer class="mt-28 text-gray-600 text-sm font-heading tracking-[0.3em] uppercase">
+        <!-- 狀態 2: 已解鎖 (直接下載區) -->
+        <div id="unlocked-section" class="hidden-node animate-fade">
+            <div class="glass-card rounded-[2.5rem] p-10 md:p-14 mb-14 border border-white/10 shadow-2xl">
+                <div class="flex justify-center mb-6">
+                    <div class="p-4 bg-[#00ea81]/10 rounded-full">
+                        <i data-lucide="unlock" class="w-10 h-10 text-[#00ea81]"></i>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-2 text-[#00ea81]">感謝您的追蹤！</h3>
+                <p class="text-gray-300 mb-8">您現在可以領取您的 1 人公司變現指南。</p>
+                
+                <a href="ai_klas_sop.pdf" download="AI_KLAS_SOP.pdf" class="btn-green w-full py-6 rounded-3xl font-black text-2xl flex items-center justify-center gap-4 shadow-xl animate-bounce">
+                    <i data-lucide="download" class="w-8 h-8"></i> 下載完整 PDF
+                </a>
+            </div>
+        </div>
+
+        <!-- 頁尾 -->
+        <footer class="mt-28 text-sm font-heading tracking-[0.3em] uppercase">
             <span class="text-[#00ea81] font-bold">Director's Logic × AI Power</span><br>
-            <span class="inline-block mt-3 font-black text-white">© 2026 AI KLAS PRESENTS</span>
+            <span class="inline-block mt-3 font-black text-white">© 2026 AI KLAS. All Rights Reserved.</span>
         </footer>
     </main>
 
     <script>
         lucide.createIcons();
 
-        function unlockStep() {
+        // 頁面加載時檢查是否已經追蹤過
+        window.onload = function() {
+            const isFollowing = localStorage.getItem('aiklas_followed');
+            if (isFollowing === 'true') {
+                showUnlocked();
+            }
+        };
+
+        // 當用戶點擊追蹤按鈕
+        function markAsClicked() {
+            // 標記用戶已經點擊過追蹤連結
+            localStorage.setItem('aiklas_clicked_follow', 'true');
+            
+            // 溫馨提示
             setTimeout(() => {
-                const downloadBtn = document.getElementById('download-btn');
-                const unlockMsg = document.getElementById('unlock-msg');
-                const step2Text = document.getElementById('step-2-text');
-                const step2Num = document.getElementById('step-2-num');
+                showToast("請在追蹤後回到此頁面解鎖");
+            }, 1000);
+        }
 
-                downloadBtn.classList.remove('opacity-20', 'cursor-not-allowed', 'pointer-events-none', 'grayscale');
-                downloadBtn.classList.add('animate-pulse');
-                
-                unlockMsg.innerText = "✨ SUCCESS: CONTENT UNLOCKED";
-                unlockMsg.classList.remove('light-gray-text');
-                unlockMsg.classList.add('text-[#00ea81]', 'font-bold');
-                
-                step2Text.classList.remove('light-gray-text');
-                step2Text.classList.add('text-white');
-                
-                step2Num.classList.remove('opacity-30');
-                step2Num.style.backgroundColor = '#00ea81';
+        // 當用戶點擊「我已追蹤」
+        function checkFollowStatus() {
+            const hasClicked = localStorage.getItem('aiklas_clicked_follow');
+            
+            if (hasClicked === 'true') {
+                // 模擬解鎖成功
+                localStorage.setItem('aiklas_followed', 'true');
+                showUnlocked();
+            } else {
+                // 提示用戶先點擊追蹤
+                showToast("請先點擊上方按鈕前往追蹤 IG");
+            }
+        }
 
-                const notice = document.createElement('div');
-                notice.className = 'fixed bottom-10 left-1/2 -translate-x-1/2 bg-[#00ea81] text-[#373e98] px-10 py-4 rounded-2xl font-black shadow-2xl z-50 animate-bounce text-lg';
-                notice.innerHTML = '已解鎖！請點擊按鈕領取您的 SOP';
-                document.body.appendChild(notice);
-                setTimeout(() => notice.remove(), 5000);
-            }, 1200);
+        function showUnlocked() {
+            document.getElementById('locked-section').classList.add('hidden-node');
+            document.getElementById('unlocked-section').classList.remove('hidden-node');
+        }
+
+        function showToast(msg) {
+            const notice = document.createElement('div');
+            notice.className = 'fixed bottom-10 left-1/2 -translate-x-1/2 bg-[#ffb6f1] text-[#373e98] px-8 py-4 rounded-2xl font-black shadow-2xl z-50 animate-bounce text-sm';
+            notice.innerHTML = msg;
+            document.body.appendChild(notice);
+            setTimeout(() => notice.remove(), 4000);
         }
     </script>
 </body>
